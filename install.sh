@@ -10,7 +10,7 @@ echo "Dependencies installed"
 
 echo "Installing Coq.."
 cd coq
-./configure -local -flambda-opts '-O3 -unbox-closures' && make
+./configure -local -flambda-opts '-O3 -unbox-closures' && make -j
 cd ..
 export COQBIN=$COQ_ROOT/bin/
 export PATH=$COQBIN:$PATH
@@ -25,7 +25,7 @@ echo "SerAPI installed"
 
 echo "Installing CoqHammer.."
 cd TacTok/coqhammer
-make
+make -j
 make install
 cd ../..
 echo "CoqHammer installed"
